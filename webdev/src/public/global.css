@@ -1,0 +1,89 @@
+/* ===== Root Styles ===== */
+  @import url('https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900');
+  @import url('https://fonts.googleapis.com/css2?family=Jura:wght@500;600;700&family=Ubuntu:wght@300;400;500;700&display=swap');
+
+  :root{
+    font-size : 62.50%;
+    --bg1     : #1A1A1A;
+    --black   : #292929;
+    --white   : aliceblue;                                                                                                                                                                                                        
+    --purple  : #9400D3;
+    --green   : #6bff2c;
+    --backgroundInput  : #272530;
+    --borderInput      : #2F2C45;
+    --placeholderText  : #b3b3b3;
+    --focusBorder      : #7E4CCB;
+  }
+/* ===== General Styles ===== */
+  *,*::after,*::before{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing: border-box;
+  }
+  html,body{
+    scroll-behavior: smooth;
+  }
+  body{
+    width: 100vw;
+    height: 10000px;
+    background-color: var(--bg1);
+    overflow-x: hidden !important;
+  }
+  ul{
+    list-style: none;
+  }
+  a{
+    text-decoration: none;
+  }
+  .title{
+    position: relative;
+    width:fit-content;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 3.3rem;
+    font-family:'Jura', sans-serif;
+    color: var(--white);
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  .title::after{
+    content: '';
+    position: absolute;
+    left:-10px;
+    top:0;
+    height: 100%;
+    border-left: 5px solid var(--purple);
+  }
+  .text{
+    text-align: justify;
+    font-size: 2rem;
+    letter-spacing: normal;
+    color: var(--white);
+    line-height: 4rem;
+    font-weight: 500;
+    font-family: 'Jura', sans-serif;
+  }
+  .text::first-letter{
+    margin-left: 5rem;
+  }
+  .invisible{
+    opacity: 0;
+    visibility: hidden;
+    display: none;
+  }
+  /* ScrollBar styles */
+    /* Works on Firefox */
+    * {
+      scrollbar-width: thin;
+    }
+    /* Works on Chrome, Edge, and Safari */
+    *::-webkit-scrollbar {
+      width: 1.5rem;
+    }
+    *::-webkit-scrollbar-thumb {
+      background-color:var(--bg1);
+      border-radius: 20px;
+      border: 4px solid var(--purple);
+    }

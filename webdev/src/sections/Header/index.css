@@ -1,0 +1,247 @@
+header{
+  position: fixed;
+  top:0;
+  left:0;
+  z-index: 10;
+  width: 100%;
+  padding: 10rem 0rem;
+  display: flex;
+  flex: wrap;
+  justify-content:space-evenly;
+  align-items: center;
+  transition: all .4s ease-in-out;
+}
+header.scroll{
+  box-shadow: 0 1px 10px 0.1px var(--white);
+  backdrop-filter: blur(5px);
+  padding:8rem 0rem;
+}
+header .logo{
+  position:absolute;
+  left:1rem;
+  top:50%;
+  transform: translateY(-50%);
+  width: 10rem;
+  height: 10rem;
+}
+header .logo img{
+  position: absolute;
+  top:0;
+  left:1rem;
+  width:100%;
+  height:100%;
+  object-fit: contain;
+}
+header .navigation{
+  position: absolute;
+  top:50%;
+  transform: translateY(-50%);
+  width:40rem;
+  height: 7rem;
+  background: var(--black);
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1rem;
+  font-family: 'Poppins',sans-serif;
+  border: .2rem solid var(--focusBorder);
+}
+header .navigation ul{
+  position: relative;
+  display: flex;
+  width:35rem;
+}
+header .navigation ul li{
+  position:relative;
+  width:7rem;
+  height:7rem;
+  z-index:1;
+}
+header .navigation ul li a{
+  position:relative;
+  gap:2rem;
+  z-index: 100;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-direction: column;
+  width:100%;
+  text-align: center;
+  font-weight: 500;
+}
+header .navigation ul li a .icon{
+  position:relative;
+  display:block;
+  line-height: 7.5rem;
+  font-size:3.5em;
+  text-align: center;
+  transition: 0.5s;
+  color:var(--white);
+}
+header .navigation ul li.active a .icon{
+  transform: translateY(-3rem);
+  color:var(--focusBorder);
+}
+header .navigation ul li a .textLink{
+  position: absolute;
+  color:var(--white);
+  font-weight: 600;
+  font-size: 1.5em;
+  letter-spacing: 0.05rem;
+  transition: 0.5s;
+  opacity:0;
+  margin-top: 3rem;
+  transform: translateY(3rem);
+}
+header .navigation ul li.active a .textLink{
+  opacity: 1;
+  transform: translateY(.1rem);
+}
+header .indicator{
+  position: absolute;
+  top:-50%;
+  width:7rem;
+  height:7rem;
+  background:var(--black);
+  border-radius:50%;
+  border: .6rem solid var(--bg1);
+  transition: all .5s ease-in-out;
+}
+header .indicator::before{
+  content: '';
+  position:absolute;
+  top:50%;
+  left: -2.2rem;
+  width:2rem;
+  height:2rem;
+  background:transparent;
+  border-top-right-radius:2rem;
+  box-shadow: 0rem -1rem 0 0 transparent;
+}
+header .indicator::after{
+  content: '';
+  position:absolute;
+  top:50%;
+  right: -2.2rem;
+  width:2rem;
+  height:2rem;
+  background:transparent;
+  border-top-left-radius:2rem;
+  box-shadow: 0rem -1rem 0 0 transparent;
+}
+.navigation ul li:nth-child(1).active ~ .indicator{
+  transform: translateX(calc(7rem * 0));
+}
+.navigation ul li:nth-child(2).active ~ .indicator{
+  transform: translateX(calc(7rem * 1));
+}
+.navigation ul li:nth-child(3).active ~ .indicator{
+  transform: translateX(calc(7rem * 2));
+}
+.navigation ul li:nth-child(4).active ~ .indicator{
+  transform: translateX(calc(7rem * 3));
+}
+.navigation ul li:nth-child(5).active ~ .indicator{
+  transform: translateX(calc(7rem * 4));
+}
+.links{
+  position: absolute;
+  right: 3rem;
+  top:50%;
+  transform: translateY(-50%);
+  width:25rem;
+  height: 7rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--black);
+  border-radius: 1rem;
+  font-family: 'Poppins',sans-serif;
+}
+.links ul{
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+.links ul li{
+  position:relative;
+  border-radius: 1rem 1.5rem 1rem 1.5rem;
+  width:6rem;
+  height:6rem;
+  z-index:1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 1s ease-in-out; 
+}
+ .links ul li a{
+  position: relative;
+  font-size: 3.5rem;
+  color:var(--white);
+}
+.links ul li a ion-icon{
+  position: absolute;
+  top:50%;
+  left: 50%;
+  color: var(--bg1);
+  transform: translate(-50%,-50%);
+  transition: .5s ease-in-out all;
+}
+.links ul li:hover{
+  background:var(--bg1);
+  box-shadow: inset -1px -1px 24px 0px var(--focusBorder);
+}
+header .links ul li:hover .facebookIcon ion-icon{
+  color:rgb(0, 128, 255);
+}
+header .links ul li:hover .instagramIcon ion-icon{
+  color:#E000BB;
+}
+header .links ul li:hover .whatsappIcon ion-icon{
+  color:rgb(70, 192, 39);
+} 
+
+.menu{
+  position: absolute;
+  right: 3rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color:var(--focusBorder);
+  cursor: pointer;
+  font-size: 5rem;
+  visibility: hidden;
+  opacity: 0;
+  display: none;
+  transition: .4s all ease;
+}
+.menu:hover{
+  filter: brightness(.7);
+}
+
+@media (max-width:1018px){
+  header .links{
+    top: 70%;
+    width: 7rem;
+    height: 25rem;
+  }
+  header .links ul{
+    flex-direction: column;
+  }
+}
+@media (max-width:750px){
+  .menu.openIcon{
+    visibility: visible;
+    opacity: 1;
+    display: inline-block;
+  }
+  header .navigation,
+  header .links{
+    visibility: hidden;
+    opacity: 0;
+    display: none;
+  }
+}
